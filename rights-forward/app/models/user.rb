@@ -19,14 +19,14 @@ class User < ApplicationRecord
     end
   end
 
-  def self.search(search)
-    if search
-      where(["fullname ILIKE ? OR affiliation ILIKE ?", "%#{search}%", "%#{search}%"])
-      # use ILIKE for psql instead of LIKE. also needed for heroku
-    else
-      all
-    end
-  end
+  # def self.search(search)
+  #   if search
+  #     where(["fullname ILIKE ? OR affiliation ILIKE ?", "%#{search}%", "%#{search}%"])
+  #     # use ILIKE for psql instead of LIKE. also needed for heroku
+  #   else
+  #     all
+  #   end
+  # end
 
 
 end

@@ -4,22 +4,11 @@
 
 <div class="container">
 
-<%= form_tag showall_path, :method => 'get' do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search" %>
-<% end %>
-
-<hr>
-
-
-
 <div class="post_fav">
-  <%= render "advancedsearch" %>
+  <%= render "form" %>
 </div>
 
 <hr>
-
-
 
 <% @users.each do |user| %>
   <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
@@ -27,6 +16,14 @@
   <hr>
 
 <% end %>
+
+
+
+<hr>
+
+
+
+
 
 
 
