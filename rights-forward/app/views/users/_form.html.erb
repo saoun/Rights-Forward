@@ -1,6 +1,6 @@
 <fieldset class="search-field">
   <legend>Search Our Database</legend>
-  <%= search_form_for @search do |f| %>
+  <%= search_form_for @search, url:'/showall' do |f| %>
     <div class="field">
       <%= f.label :name_cont, "Name contains" %>
       <%= f.text_field :name_cont %>
