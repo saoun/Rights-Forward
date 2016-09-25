@@ -36,7 +36,6 @@ gem 'factory_girl'
 gem 'faker'
 gem 'omniauth-twitter'
 gem 'pry'
-gem 'ransack'
 
 
 

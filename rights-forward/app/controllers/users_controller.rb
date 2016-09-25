@@ -6,10 +6,11 @@ class UsersController < ApplicationController
   end
 
   def showall
-    @search = User.search(params[:q])
-    @users = @search.result(distinct: true)
+    # @search = User.search(params[:q])
+    # @users = @search.result(distinct: true)
     # @users = User.search(params[:search])
-    @users = User.all
+    # @users = User.all
+    @users = User.search(params[:search])
   end
 
   def show
@@ -48,16 +49,6 @@ class UsersController < ApplicationController
       :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertises_ids:[])
   end
 
-  # def user_params
-  #   params.require(:user).permit(:fullname, :contact, :bio,
-  #     :affiliation, :trainings, :skills, :languages, :expertise)
-  # end
-
-  #   def user_params
-  #   params.require(:user).permit(:fullname, :contact, :bio,
-  #     :affiliation, :trainings, skills:[], languages:[], expertise:[], type:[])
-  # end
-  # checkbox
 
 end
 
