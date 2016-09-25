@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :types
+  resources :languages
+  resources :expertises
+  resources :skills
   resources :users
   # resources :skills
   # resources :languages
