@@ -1,13 +1,11 @@
 
 
-
-
 <fieldset class="search-field">
   <legend>Search Our Database</legend>
   <%= search_form_for @search do |f| %>
     <div class="field">
-      <%= f.label :fullname, "Name contains" %>
-      <%= f.text_field :fullname %>
+      <%= f.label :name_cont, "Name contains" %>
+      <%= f.text_field :name_cont %>
     </div>
 
     <div class="field">
