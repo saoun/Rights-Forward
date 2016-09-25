@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def showall
-    @users = User.search(params[:search])
+    # @users = User.search(params[:search])
+    @users = User.all
   end
 
   def show
