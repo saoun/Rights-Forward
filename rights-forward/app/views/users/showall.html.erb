@@ -4,11 +4,18 @@
 
 <div class="container">
 
-
 <%= form_tag showall_path, :method => 'get' do %>
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search" %>
 <% end %>
+
+<hr>
+
+
+
+<div class="post_fav">
+  <%= render "advancedsearch" %>
+</div>
 
 <hr>
 
