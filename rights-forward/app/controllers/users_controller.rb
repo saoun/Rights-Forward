@@ -2,18 +2,22 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.all
+  end
 
 
+  def search
+    showall
+    render :showall
   end
 
   def showall
     @search = User.search(params[:q])
-    @users = @search.result(distinct: true)
+    @users = @search.result
     # @users = User.search(params[:search])
     # # @users = User.all
     # @search = User.search(params[:q])
     # @users = @search.result
-    byebug
+
   end
 
   def show

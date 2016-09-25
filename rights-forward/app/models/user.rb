@@ -19,6 +19,8 @@ class User < ApplicationRecord
     end
   end
 
+  User.ransack(params[:q])
+
   # def self.search(search)
   #   if search
   #     where(["fullname ILIKE ? OR affiliation ILIKE ?", "%#{search}%", "%#{search}%"])

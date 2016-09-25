@@ -5,7 +5,7 @@
 <div class="container">
 
 <div class="post_fav">
-  <%= render "form" %>
+  <%= render "advancedsearch" %>
 </div>
 
 <hr>
@@ -17,8 +17,9 @@
 
 <% end %>
 
-
-
+<% if @search %>
+Found you: <%=@search%>
+<% end %>
 <hr>
 
 
