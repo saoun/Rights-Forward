@@ -1,0 +1,25 @@
+<div class="container">
+
+Check Profile:
+
+<hr>
+
+  Name: <%= @user['fullname'] %><br>
+  Skills are: <%= @user['skills']%><br>
+  Contact: <%= @user['contact']%><br>
+  Works at <%= @user['affiliation'] %></br>
+
+  <h5><a href ="/showall">Show All</a></h5><br>
+
+
+<% if @user['fullname'] == current_user.fullname %>
+<h5><%= link_to "Sign out", "/signout" %></h5> <br>
+  <h5><%= link_to 'Delete Account', current_user, method: :delete %></h5> <br>
+  <h5><a href ="<%=current_user.id%>/edit">Edit</a></h5><br>
+
+<% end %>
+
+
+<!-- if current user, then can edit / add things to database -->
+
+</div>
