@@ -1,3 +1,36 @@
+
 <div>
   <%= render "navbar" %>
+</div>
+
+<div class="container">
+<h1>View All Trainers</h1>
+<h5><a href ="/">Home</a></h5><br>
+
+
+
+<%= form_tag showall_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<hr>
+
+
+
+
+
+<hr>
+
+
+
+<% @users.each do |user| %>
+  <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
+  Works at <%= user['affiliation'] %></br>
+  <hr>
+
+<% end %>
+
+
+
 </div>
