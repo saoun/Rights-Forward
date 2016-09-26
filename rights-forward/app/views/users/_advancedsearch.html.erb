@@ -1,0 +1,8 @@
+<%= text_field :user, :fullname %>
+
+
+<% for language in language.find(:all) %>
+<%= check_box_tag "user[language_ids][]", language.id,
+@user.languages.include?(language)%>
+<%= language.name %>
+<%end%>
