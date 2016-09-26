@@ -1,23 +1,37 @@
+<h1>View All Trainers</h1>
+<h5><a href ="/">Home</a></h5><br>
+
+
 <div class="container">
 
+<div >
+  <%#= render "advancedsearch" %>
+   <%= search_form_for @q do |f| %>
+    <div class="field">
+      <%= f.label :fullname_cont, "Name >>>" %>
+      <%= f.search_field :fullname_cont  %>
+    </div>
+    <div class="actions"><%= f.submit "Search" %></div>
+  <% end %>
 
-<% if current_user %>
-  <h1><%= "Welcome #{current_user.name}" %></h1>
-  <img src=<%="#{current_user.image}"%> /> <br>
-  <h5><%= link_to "Sign out", "/signout" %></h5> <br>
-  <h5><a href ="users/<%=current_user.id%>/edit">Edit</a></h5>
+</div>
 
-  <br>
+<hr>
 
-  <h5><a href ="/showall">Show All</a></h5><br>
+<% @users.each do |user| %>
+  <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
+  Works at <%= user['affiliation'] %></br>
+  <hr>
 
-
-
-<!-- if current user, then can edit / add things to database -->
-
-
-<% else %>
-  <h1><%= link_to "Sign in with Twitter", "/auth/twitter" %></h1>
 <% end %>
+
+
+<hr>
+
+
+
+
+
+
 
 </div>

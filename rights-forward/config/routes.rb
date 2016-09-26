@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users
 
 
-  root to: "users#index"
+  root to: "home#index"
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
@@ -15,9 +15,6 @@ Rails.application.routes.draw do
   # put '/profile/:id/edit' => 'users#profileEdit'
   # get '/profile/:id/edit' => 'users#profileEdit'
   # get '/profile/:id' => 'users#profileShow'
-
-  get '/showall' => 'users#showall'
-
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

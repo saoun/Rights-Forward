@@ -1,23 +1,13 @@
 class UsersController < ApplicationController
-
-  def index
-    # @users = User.all
-  end
-
-
   # def search
   #   showall
   #   render :showall
   # end
 
-  def showall
-    byebug
-    @search = User.search(params[:q])
-    @users = @search.result(distinct: true)
-    # @users = User.search(params[:search])
-    # # @users = User.all
-    # @search = User.search(params[:q])
-    # @users = @search.result
+  def index
+      @q = User.ransack(params[:q])
+      @users = @q.result(distinct: true)
+      debugger
   end
 
   def show
@@ -65,14 +55,19 @@ class UsersController < ApplicationController
 
   private
 # first one
-    def user_params
-    params.require(:user).permit(:fullname, :contact, :bio,
-      :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertises_ids:[])
-  end
+  # def user_params
+  #   params.require(:user).permit(:fullname, :contact, :bio,
+  #     :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertises_ids:[])
+  # end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+  # def set_user
+  #   @user = User.find(params[:id])
+  # end
+
+  # def search_params
+  #   #params.require(:q).permit(:fullname_cont)
+  #   params.permit(:q)
+  # end
 
 end
 
