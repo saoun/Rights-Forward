@@ -11,6 +11,15 @@
       <%= f.label :fullname_cont, "Name >>>" %>
       <%= f.search_field :fullname_cont  %>
     </div>
+     <div class="field">
+      <%= f.label "Area of Expertise" %><br />
+      <%= f.collection_check_boxes :expertises_id_in_any, Expertise.all, :id, :name do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
     <div class="actions"><%= f.submit "Search" %></div>
   <% end %>
 

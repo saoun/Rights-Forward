@@ -7,10 +7,10 @@ class UsersController < ApplicationController
   def index
       @q = User.ransack(params[:q])
       @users = @q.result(distinct: true)
-      debugger
   end
 
   def show
+
     @user = User.find_by(id: params[:id])
   end
 
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    debugger
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to(:user)
@@ -54,21 +55,15 @@ class UsersController < ApplicationController
 
 
   private
-# first one
-  # def user_params
-  #   params.require(:user).permit(:fullname, :contact, :bio,
-  #     :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertises_ids:[])
-  # end
+  # first one
+  def user_params
+    params.require(:user).permit(:fullname, :contact, :bio,
+      :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertise_ids:[])
+  end
 
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
-
-  # def search_params
-  #   #params.require(:q).permit(:fullname_cont)
-  #   params.permit(:q)
-  # end
-
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
 
 
