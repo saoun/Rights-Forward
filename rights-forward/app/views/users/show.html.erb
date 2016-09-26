@@ -1,10 +1,14 @@
+<div>
+  <%= render "navbar" %>
+</div>
+
 <div class="container">
 
-Check Profile:
+<h3><%= "Hi, #{current_user.fullname}" %></h3>
 
 <hr>
 
-  Name: <%= @user['fullname'] %><br>
+  <p>Twitter: <%= @user['name'] %></p><br>
   Skills are: <%= @user['skills']%><br>
   Contact: <%= @user['contact']%><br>
   Works at <%= @user['affiliation'] %></br>
