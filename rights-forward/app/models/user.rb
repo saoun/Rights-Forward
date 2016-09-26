@@ -19,7 +19,10 @@ class User < ApplicationRecord
     end
   end
 
-
+#   def self.in_languages(language_ids=[])
+#   return all if language_ids.blank? || language_ids.empty?
+#   includes(:languages).where(languages: { id: language_ids })
+# end
 
   def self.search(search)
     if search

@@ -4,12 +4,9 @@ Rails.application.routes.draw do
   resources :expertises
   resources :skills
   resources :users
-  # resources :skills
-  # resources :languages
-  # resources :expertises
-  # resources :types
 
-  root to: "users#index"
+
+  root to: "home#index"
   get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy", :as => :signout
 
@@ -19,7 +16,6 @@ Rails.application.routes.draw do
   # get '/profile/:id/edit' => 'users#profileEdit'
   # get '/profile/:id' => 'users#profileShow'
 
-  get '/showall' => 'users#showall'
 
 
 

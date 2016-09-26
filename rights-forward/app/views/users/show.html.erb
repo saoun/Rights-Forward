@@ -1,21 +1,28 @@
+<div>
+  <%= render "navbar" %>
+</div>
+
 <div class="container">
 
-Check Profile:
+<% if @user['fullname'] == current_user.fullname %>
+  <h3><%= "Hi, #{current_user.fullname}" %></h3>
+<% end %>
 
 <hr>
 
-  Name: <%= @user['fullname'] %><br>
-  Skills are: <%= @user['skills']%><br>
+  <p>Name: <%= @user['fullname'] %></p><br>
   Contact: <%= @user['contact']%><br>
-  Works at <%= @user['affiliation'] %></br>
+  Affiliation: <%= @user['affiliation'] %></br>
+  Bio:
 
-  <h5><a href ="/showall">Show All</a></h5><br>
+  <h5><a href ="/users">Show All</a></h5><br>
 
 
 <% if @user['fullname'] == current_user.fullname %>
 <h5><%= link_to "Sign out", "/signout" %></h5> <br>
   <h5><%= link_to 'Delete Account', current_user, method: :delete %></h5> <br>
   <h5><a href ="<%=current_user.id%>/edit">Edit</a></h5><br>
+  <h5><a href ="/">Home</a></h5><br>
 
 <% end %>
 

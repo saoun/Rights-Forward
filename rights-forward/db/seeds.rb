@@ -20,28 +20,28 @@ puts "created 20 users"
 
 # create skills
 Skill.delete_all
-skills = %w(Internet Advocacy DataViz)
+skills = ["Internet", "Advocacy", "DataViz"]
 skills.each do |name|
   Skill.create(name: name)
 end
 
 # create languages
 Language.delete_all
-languages = %w(French Arabic Spanish English Urdu Hindi Italian Portuguese Chinese)
+languages = ["French", "Arabic", "Spanish", "English", "Urdu", "Hindi", "Italian", "Portuguese", "Chinese"]
 languages.each do |name|
   Language.create(name: name)
 end
 
 # create type
 Type.delete_all
-types = %w(Digital_Security Physical_Security Advocacy Data_Visualization Social_Media)
+types = ["Digital Security", "Physical Security", "Advocacy", "Data Visualization", "Social Media"]
 types.each do |name|
   Type.create(name: name)
 end
 
 #create expertise
 Expertise.delete_all
-expertises = %w(Middle_East South_Asia Latin_America Africa Europe USA East_Asia South_East_Asia)
+expertises = ["Middle East", "South Asia", "Latin America", "Africa", "Europe", "USA", "East Asia", "South East Asia"]
 expertises.each do |name|
   Expertise.create(name: name)
 end

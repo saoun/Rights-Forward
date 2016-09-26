@@ -1,3 +1,8 @@
+
+<div>
+  <%= render "navbar" %>
+</div>
+
 <div class="container">
 
 
@@ -6,7 +11,8 @@
   <img src=<%="#{current_user.image}"%> /> <br>
   <h5><%= link_to "Sign out", "/signout" %></h5> <br>
   <h5><%= link_to 'Delete Account', current_user, method: :delete %></h5><br>
-  <h5><a href ="/showall">Show All</a></h5><br>
+  <h5><a href ="/users">Show All</a></h5><br>
+  <h5><a href ="/">Home</a></h5><br>
 
 Skills are: <br>
 Contact:  <br>
