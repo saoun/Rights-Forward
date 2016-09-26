@@ -5,20 +5,11 @@
   <h1><%= "Welcome #{current_user.name}" %></h1>
   <img src=<%="#{current_user.image}"%> /> <br>
   <h5><%= link_to "Sign out", "/signout" %></h5> <br>
-  <h5><%= link_to 'Delete Account', current_user, method: :delete %></h5><br>
+  <h5><a href ="users/<%=current_user.id%>/edit">Edit</a></h5>
+
+  <br>
+
   <h5><a href ="/showall">Show All</a></h5><br>
-
-Skills are: <br>
-Contact:  <br>
-Name: <%= "#{current_user.fullname}" %><br>
-
-<div >
-  <%= render "form" %>
-</div>
-
-
-
-
 
 
 
@@ -26,7 +17,7 @@ Name: <%= "#{current_user.fullname}" %><br>
 
 
 <% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <h1><%= link_to "Sign in with Twitter", "/auth/twitter" %></h1>
 <% end %>
 
 </div>

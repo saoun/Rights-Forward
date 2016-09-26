@@ -3,12 +3,7 @@ Rails.application.routes.draw do
   resources :languages
   resources :expertises
   resources :skills
-
-  resources :users do
-    collection do
-      match 'search' => 'users#showall', via: [:get, :post], as: :search
-    end
-  end
+  resources :users
 
 
   root to: "users#index"
