@@ -4,14 +4,16 @@
 
 <div class="container">
 
-<h3><%= "Hi, #{current_user.fullname}" %></h3>
+<% if @user['fullname'] == current_user.fullname %>
+  <h3><%= "Hi, #{current_user.fullname}" %></h3>
+<% end %>
 
 <hr>
 
-  <p>Twitter: <%= @user['name'] %></p><br>
-  Skills are: <%= @user['skills']%><br>
+  <p>Name: <%= @user['fullname'] %></p><br>
   Contact: <%= @user['contact']%><br>
-  Works at <%= @user['affiliation'] %></br>
+  Affiliation: <%= @user['affiliation'] %></br>
+  Bio:
 
   <h5><a href ="/showall">Show All</a></h5><br>
 
