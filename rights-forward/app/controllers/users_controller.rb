@@ -2,17 +2,10 @@ class UsersController < ApplicationController
 
   def index
     # @users = User.all
-  @users = User.search(params[:search])
+    # @users = User.search(params[:search]) old search
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
   end
-
-  # def showall
-  #   # @search = User.search(params[:q])
-  #   # @users = @search.result(distinct: true)
-  #   # @users = User.search(params[:search])
-  #   # @users = User.all
-  #   @users = User.search(params[:search])
-  #   # @users = User.all
-  # end
 
   def show
     @user = User.find_by(id: params[:id])
@@ -50,6 +43,9 @@ class UsersController < ApplicationController
       :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertises_ids:[])
   end
 
+# def set_user
+#     @user = User.find(params[:id])
+#   end
 
 end
 

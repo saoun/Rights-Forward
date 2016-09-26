@@ -9,14 +9,13 @@
 
 
 
-<%= form_tag showall_path, :method => 'get' do %>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag "Search" %>
-<% end %>
 
 <hr>
 
 
+<div>
+  <%= render "advancedsearch" %>
+</div>
 
 
 
