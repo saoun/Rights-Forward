@@ -10,6 +10,7 @@
 
 <hr>
 
+<% byebug %>
 <% @users.each do |user| %>
   <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
   Works at <%= user['affiliation'] %></br>

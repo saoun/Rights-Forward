@@ -11,13 +11,13 @@ class UsersController < ApplicationController
   # end
 
   def showall
+    byebug
     @search = User.search(params[:q])
     @users = @search.result(distinct: true)
     # @users = User.search(params[:search])
     # # @users = User.all
     # @search = User.search(params[:q])
     # @users = @search.result
-
   end
 
   def show
