@@ -1,7 +1,7 @@
 <div>
   <%= search_form_for @q do |f| %>
     <div class="field">
-      <%= f.label :fullname_cont, "Name >>>" %>
+      <%= f.label :fullname_cont, "Name Contains:" %>
       <%= f.search_field :fullname_cont  %>
     </div>
      <div class="field">

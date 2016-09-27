@@ -30,3 +30,30 @@ a {
   border-right: 2px solid #c11818;
   border-bottom: 2px solid #c11818;
 }
+
+[type=text].valid {
+  border-bottom: 1px solid #c11818;
+  box-shadow: 0 1px 0 0 #c11818;
+}
+
+//edit form
+.checkFields {
+  display: inline-block;
+  padding-right: 30px;
+}
+
+// edit form
+.field {
+  margin-top: 40px;
+}
+
+// input:focus + label {
+//   color: #c11818;
+// }
+
+// input:focus {
+//   border-bottom: 1px solid #c11818;
+//   box-shadow: 0 1px 0 0 #c11818;
+// }
+
+
