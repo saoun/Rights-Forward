@@ -1,5 +1,5 @@
 
- <ul id="slide-out" class="side-nav fixed">
+  <ul id="slide-out" class="side-nav fixed">
     <li><div class="userView">
       <h3 id="title">RIGHTS FORWARD</h3>
     </div></li>
@@ -8,7 +8,7 @@
       <li><div class="divider"></div></li>
     <li><a class="menu" href="/users">FIND TRAINER</a></li>
       <li><div class="divider"></div></li>
-    <li><a class="waves-effect menu" href="/">RESOURCES</a></li>
+    <li><a class="waves-effect menu" href="/home/show">RESOURCES</a></li>
       <li><div class="divider"></div></li>
 
     <% if current_user %>
@@ -17,6 +17,32 @@
       <li><a class="menu" href="/auth/twitter">SIGN IN</a></li>
     <% end %>
     <li><div class="divider"></div></li>
+
+    <!-- <div class="row">
+    <ul class="externalLinks">
+      <li class="Widget">
+        <a href="https://twitter.com/sa0un">
+          <img src="<%=asset_path('twitter.png')%>"/>
+        </a>
+      </li>
+      <li class="widget">
+        <a href="https://www.facebook.com/sadakaoun">
+          <img src="<%=asset_path('facebook.png')%>"/>
+        </a>
+      </li>
+      <li class="widget">
+        <a href="https://www.github.com/saoun">
+          <img src="<%=asset_path('github.png')%>"/>
+        </a>
+      </li>
+      <li class="widget">
+        <a href="https://www.linkedin.com/in/sarahmaoun">
+          <img src="<%=asset_path('linkedin.png')%>"/>
+        </a>
+      </li>
+    </ul>
+    </div> -->
+
   </ul>
   <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 
