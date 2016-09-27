@@ -4,32 +4,20 @@
 </div>
 
 <div class="container">
-<h1>View All Trainers</h1>
-<h5><a href ="/">Home</a></h5><br>
+  <h1>Search Trainers</h1>
 
+  <hr class="lineHeader">
 
+  <div>
+    <%= render "advancedsearch" %>
+  </div>
 
-
-<hr>
-
-
-<div>
-  <%= render "advancedsearch" %>
-</div>
-
-
-
-<hr>
-
-
-
-<% @users.each do |user| %>
-  <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
-  Works at <%= user['affiliation'] %></br>
   <hr>
 
-<% end %>
-
-
+  <% @users.each do |user| %>
+    <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
+    <p>Works at <%= user['affiliation'] %></p></br>
+    <hr>
+  <% end %>
 
 </div>

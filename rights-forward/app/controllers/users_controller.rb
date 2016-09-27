@@ -27,25 +27,11 @@ class UsersController < ApplicationController
     redirect_to(:user)
   end
 
-  # def profileShow
-  #   @user = User.find_by(id: params[:id])
-  # end
-
-  # def profileEdit
-  #   @user = User.find_by_id(params[:id])
-  # end
-
-
   private
-# first one
     def user_params
-    params.require(:user).permit(:fullname, :contact, :bio,
-      :affiliation, :trainings, skills_ids:[], languages_ids:[], types_ids:[], expertise_ids:[])
+    params.require(:user).permit(:name, :fullname, :contact, :bio,
+      :affiliation, :trainings, skill_ids:[], language_ids:[], type_ids:[], expertise_ids:[])
   end
-
-# def set_user
-#     @user = User.find(params[:id])
-#   end
 
 end
 
