@@ -36,15 +36,31 @@ a {
   box-shadow: 0 1px 0 0 #c11818;
 }
 
-//edit form
+//edit form and search form
 .checkFields {
   display: inline-block;
   padding-right: 20px;
+  font-weight: 400;
+}
+
+label {
+  font-size: 15px;
 }
 
 // edit form
 .field {
   margin-top: 40px;
+}
+
+//about page
+.about {
+  margin-top: 50px;
+  line-height: 30px;
+}
+
+//hr line after titles
+.lineHeader {
+  border-top-color: red;
 }
 
 // input:focus + label {
