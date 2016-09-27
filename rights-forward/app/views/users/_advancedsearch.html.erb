@@ -6,45 +6,46 @@
     </div>
 
      <div class="field">
+
      <ul>
       <li class="checkFields">
-      <%= f.label "Regional Expertise" %><br />
-      <%= f.collection_check_boxes :expertises_id_in_any, Expertise.all, :id, :name do |b| %>
+        <%= f.label "Regional Expertise" %><br />
+        <%= f.collection_check_boxes :expertises_id_in_any, Expertise.all, :id, :name do |b| %>
         <div class="collection-check-box">
           <%= b.check_box %>
           <%= b.label %>
         </div>
-      <% end %>
+        <% end %>
       </li>
 
       <li class="checkFields">
-      <%= f.label "Skills" %><br />
-      <%= f.collection_check_boxes :skills_id_in_any, Skill.all, :id, :name do |b| %>
+        <%= f.label "Skills" %><br />
+        <%= f.collection_check_boxes :skills_id_in_any, Skill.all, :id, :name do |b| %>
         <div class="collection-check-box">
           <%= b.check_box %>
           <%= b.label %>
         </div>
-      <% end %>
+        <% end %>
       </li>
 
       <li class="checkFields">
-      <%= f.label "Languages" %><br />
-      <%= f.collection_check_boxes :languages_id_in_any, Language.all, :id, :name do |b| %>
+        <%= f.label "Languages" %><br />
+        <%= f.collection_check_boxes :languages_id_in_any, Language.all, :id, :name do |b| %>
         <div class="collection-check-box">
           <%= b.check_box %>
           <%= b.label %>
         </div>
-      <% end %>
+        <% end %>
       </li>
 
       <li class="checkFields">
-      <%= f.label "Training Expertise" %><br />
-      <%= f.collection_check_boxes :types_id_in_any, Type.all, :id, :name do |b| %>
+        <%= f.label "Training Expertise" %><br />
+        <%= f.collection_check_boxes :types_id_in_any, Type.all, :id, :name do |b| %>
         <div class="collection-check-box">
           <%= b.check_box %>
           <%= b.label %>
         </div>
-      <% end %>
+        <% end %>
       </li>
     </ul>
 

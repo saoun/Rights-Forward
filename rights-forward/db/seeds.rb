@@ -13,16 +13,23 @@ User.delete_all
   User.create(fullname: name,
               contact: Faker::Internet.email(name),
               affiliation: Faker::Company.name,
-              bio: Faker::Hacker.say_something_smart),
-              trainings:
-              expertise_ids: (1...9).to_a.shuffle.take(rand(1..5))
-              skill_ids: (1...7).to_a.shuffle.take(rand(1..5))
-              language_ids: (1...10).to_a.shuffle.take(rand(1..5))
-              type_ids: (1...6).to_a.shuffle.take(rand(1..5))
+              bio: Faker::Hacker.say_something_smart,
+              trainings: Faker::Company.catch_phrase,
+              expertise_ids: (1...9).shuffle.take(rand(1..4)),
+              skill_ids: (1...7).shuffle.take(rand(1..4)),
+              language_ids: (1...10).shuffle.take(rand(1..3)),
+              type_ids: (1...6).shuffle.take(rand(1..3))
               )
 end
 
 puts "created 20 users"
+
+#create expertise
+Expertise.delete_all
+expertises = ["Middle East", "South Asia", "Latin America", "Africa", "Europe", "USA", "East Asia", "South East Asia"]
+expertises.each do |name|
+  Expertise.create(name: name)
+end
 
 # create skills
 Skill.delete_all
@@ -45,9 +52,3 @@ types.each do |name|
   Type.create(name: name)
 end
 
-#create expertise
-Expertise.delete_all
-expertises = ["Middle East", "South Asia", "Latin America", "Africa", "Europe", "USA", "East Asia", "South East Asia"]
-expertises.each do |name|
-  Expertise.create(name: name)
-end
