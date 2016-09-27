@@ -6,49 +6,59 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# create user
-User.delete_all
-20.times do
-  name = Faker::Name.name
-  User.create(fullname: name,
-              contact: Faker::Internet.email(name),
-              affiliation: Faker::Company.name,
-              bio: Faker::Hacker.say_something_smart,
-              trainings: Faker::Company.catch_phrase
-              # expertise_ids: (1...9).shuffle.take(rand(1..4)),
-              # skill_ids: (1...7).shuffle.take(rand(1..4)),
-              # language_ids: (1...10).shuffle.take(rand(1..3)),
-              # type_ids: (1...6).shuffle.take(rand(1..3))
-              )
-end
-
-puts "created 20 users"
+current_expertise = []
+current_skill = []
+current_language = []
+current_type = []
 
 #create expertise
 Expertise.delete_all
 expertises = ["Middle East", "South Asia", "Latin America", "Africa", "Europe", "USA", "East Asia", "South East Asia"]
 expertises.each do |name|
-  Expertise.create(name: name)
+  e = Expertise.create(name: name)
+  current_expertise << e.id
 end
 
 # create skills
 Skill.delete_all
 skills = ["Social Media", "Advocacy", "Data Mapping", "Web Development", "Research", "Cyber Security"]
 skills.each do |name|
-  Skill.create(name: name)
+  s = Skill.create(name: name)
+  current_skill << s.id
 end
 
 # create languages
 Language.delete_all
 languages = ["English", "French", "Spanish", "Italian", "Portuguese", "Arabic", "Urdu", "Hindi", "Chinese"]
 languages.each do |name|
-  Language.create(name: name)
+  l = Language.create(name: name)
+  current_language << l.id
 end
 
 # create type
 Type.delete_all
 types = ["Digital Security", "Physical Security", "Advocacy", "Data Visualization", "Social Media"]
 types.each do |name|
-  Type.create(name: name)
+  t = Type.create(name: name)
+  current_type << t.id
 end
+
+# create user
+User.delete_all
+40.times do
+  name = Faker::Name.name
+  User.create(fullname: name,
+              contact: Faker::Internet.email(name),
+              affiliation: Faker::Company.name,
+              bio: Faker::Hacker.say_something_smart,
+              trainings: Faker::Company.catch_phrase,
+              expertise_ids: current_expertise.to_a.shuffle.take(rand(1..(current_expertise.length))),
+              skill_ids: current_skill.to_a.shuffle.take(rand(1..(current_skill.length))),
+              language_ids: current_language.to_a.shuffle.take(rand(1..(current_language.length))),
+              type_ids: current_type.to_a.shuffle.take(rand(1..(current_type.length))),
+              )
+end
+
+puts "created 40 users"
+
 

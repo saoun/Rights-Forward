@@ -63,6 +63,18 @@ label {
   border-top-color: red;
 }
 
+.labelTitle {
+  font-weight: 600;
+}
+
+[type="checkbox"]+label:before, [type="checkbox"]:not(.filled-in)+label:after {
+  border: 1px solid #5a5a5a;
+}
+
+.checkFieldsUL {
+  padding-bottom: 10px;
+}
+
 // input:focus + label {
 //   color: #c11818;
 // }
