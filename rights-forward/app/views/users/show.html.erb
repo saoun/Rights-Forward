@@ -13,7 +13,9 @@
   <p>Name: <%= @user['fullname'] %></p><br>
   Contact: <%= @user['contact']%><br>
   Affiliation: <%= @user['affiliation'] %></br>
-  Bio:
+  Regional Expertise: <%= @user.expertises.map(&:name).sort.join(", ") %>
+
+  </br>
 
   <h5><a href ="/users">Show All</a></h5><br>
 
