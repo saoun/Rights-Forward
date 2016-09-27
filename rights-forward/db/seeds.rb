@@ -13,21 +13,27 @@ User.delete_all
   User.create(fullname: name,
               contact: Faker::Internet.email(name),
               affiliation: Faker::Company.name,
-              bio: Faker::Hacker.say_something_smart)
+              bio: Faker::Hacker.say_something_smart),
+              trainings:
+              expertise_ids: (1...9).to_a.shuffle.take(rand(1..5))
+              skill_ids: (1...7).to_a.shuffle.take(rand(1..5))
+              language_ids: (1...10).to_a.shuffle.take(rand(1..5))
+              type_ids: (1...6).to_a.shuffle.take(rand(1..5))
+              )
 end
 
 puts "created 20 users"
 
 # create skills
 Skill.delete_all
-skills = ["Internet", "Advocacy", "DataViz"]
+skills = ["Social Media", "Advocacy", "Data Mapping", "Web Development", "Research", "Cyber Security"]
 skills.each do |name|
   Skill.create(name: name)
 end
 
 # create languages
 Language.delete_all
-languages = ["French", "Arabic", "Spanish", "English", "Urdu", "Hindi", "Italian", "Portuguese", "Chinese"]
+languages = ["English", "French", "Spanish", "Italian", "Portuguese", "Arabic", "Urdu", "Hindi", "Chinese"]
 languages.each do |name|
   Language.create(name: name)
 end
