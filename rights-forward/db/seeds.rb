@@ -14,11 +14,11 @@ User.delete_all
               contact: Faker::Internet.email(name),
               affiliation: Faker::Company.name,
               bio: Faker::Hacker.say_something_smart,
-              trainings: Faker::Company.catch_phrase,
-              expertise_ids: (1...9).shuffle.take(rand(1..4)),
-              skill_ids: (1...7).shuffle.take(rand(1..4)),
-              language_ids: (1...10).shuffle.take(rand(1..3)),
-              type_ids: (1...6).shuffle.take(rand(1..3))
+              trainings: Faker::Company.catch_phrase
+              # expertise_ids: (1...9).shuffle.take(rand(1..4)),
+              # skill_ids: (1...7).shuffle.take(rand(1..4)),
+              # language_ids: (1...10).shuffle.take(rand(1..3)),
+              # type_ids: (1...6).shuffle.take(rand(1..3))
               )
 end
 

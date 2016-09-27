@@ -5,10 +5,17 @@
 <div class="container">
 
   <% if @user['fullname'] == current_user.fullname %>
-    <h3><%= "Hi, #{current_user.fullname}" %></h3>
+
+    <% if current_user.fullname == "" %>
+      <h3><%= "Hi There!" %></h3>
+    <%else%>
+      <h3><%= "Hi, #{current_user.fullname}" %></h3>
+    <%end%>
+
     <div class="optionsTop">
       <h5><a href ="<%=current_user.id%>/edit">Edit Profile</a></h5>
     </div>
+
   <% else %>
     <h3><%= @user['fullname'] %></h3>
   <% end %>

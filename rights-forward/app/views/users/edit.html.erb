@@ -5,8 +5,11 @@
 <div class="container">
 
   <% if current_user %>
-
-    <h3><%= "Hi, #{current_user.fullname}" %></h3>
+    <% if current_user.fullname == "" %>
+      <h3><%= "Hi There!" %></h3>
+    <%else%>
+      <h3><%= "Hi, #{current_user.fullname}" %></h3>
+    <%end%>
     <div class="optionsTop">
       <h5><a href ="/users/<%=current_user.id%>">Back</a></h5>
     </div>
