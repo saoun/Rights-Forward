@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   put 'users/:id/edit' => 'users#edit'
 
+  get 'home/show' => 'home#show'
+
   # put '/profile/:id/edit' => 'users#profileEdit'
   # get '/profile/:id/edit' => 'users#profileEdit'
   # get '/profile/:id' => 'users#profileShow'
