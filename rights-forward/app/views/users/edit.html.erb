@@ -1,37 +1,33 @@
-
 <div>
   <%= render "navbar" %>
 </div>
 
 <div class="container">
 
+  <% if current_user %>
 
-<% if current_user %>
-  <h1><%= "Welcome #{current_user.name}" %></h1>
-  <img src=<%="#{current_user.image}"%> /> <br>
-  <h5><%= link_to "Sign out", "/signout" %></h5> <br>
-  <h5><%= link_to 'Delete Account', current_user, method: :delete %></h5><br>
-  <h5><a href ="/users">Show All</a></h5><br>
-  <h5><a href ="/">Home</a></h5><br>
+    <h3><%= "Hi, #{current_user.fullname}" %></h3>
+    <div class="optionsTop">
+      <h5><a href ="/users/<%=current_user.id%>">Back</a></h5>
+    </div>
 
-Skills are: <br>
-Contact:  <br>
-Name: <%= "#{current_user.fullname}" %><br>
+    <hr>
 
+    <div class="formDiv">
+      <%= render "form" %>
+    </div>
 
-<div>
-  <%= render "form" %>
-</div>
+    <hr>
 
-
-
-
-
-<!-- if current user, then can edit / add things to database -->
+    <div class="optionsBottom">
+      <h6><%= link_to "Delete Account", current_user, method: :delete %></h6> <br>
+      <h6><%= link_to "Sign Out", "/signout" %></h6> <br>
+    </div>
 
 
-<% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-<% end %>
+
+  <% else %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  <% end %>
 
 </div>

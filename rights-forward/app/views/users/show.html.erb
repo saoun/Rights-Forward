@@ -4,31 +4,40 @@
 
 <div class="container">
 
-<% if @user['fullname'] == current_user.fullname %>
-  <h3><%= "Hi, #{current_user.fullname}" %></h3>
-<% end %>
+  <% if @user['fullname'] == current_user.fullname %>
+    <h3><%= "Hi, #{current_user.fullname}" %></h3>
+    <div class="optionsTop">
+      <h5><a href ="<%=current_user.id%>/edit">Edit Profile</a></h5>
+    </div>
+  <% else %>
+    <h3><%= @user['fullname'] %></h3>
+  <% end %>
 
-<hr>
+  <hr>
 
-  <p>Name: <%= @user['fullname'] %></p><br>
-  Contact: <%= @user['contact']%><br>
-  Affiliation: <%= @user['affiliation'] %></br>
-  Regional Expertise: <%= @user.expertises.map(&:name).sort.join(", ") %>
+  <div class="optionsMiddle">
 
-  </br>
-
-  <h5><a href ="/users">Show All</a></h5><br>
-
-
-<% if @user['fullname'] == current_user.fullname %>
-<h5><%= link_to "Sign out", "/signout" %></h5> <br>
-  <h5><%= link_to 'Delete Account', current_user, method: :delete %></h5> <br>
-  <h5><a href ="<%=current_user.id%>/edit">Edit</a></h5><br>
-  <h5><a href ="/">Home</a></h5><br>
-
-<% end %>
+    Fullname: <p><%= @user['fullname'] %></p><br>
+    Bio: <p><%= @user['bio'] %></p><br>
+    Contact: <p><%= @user['contact'] %></p><br>
+    Affiliation: <p><%= @user['affiliation'] %></p><br>
+    Past Trainings: <br>
+    Regional Expertise: <p><%= @user.expertises.map(&:name).sort.join(", ") %></p> <br>
+    Skills: <p><%= @user.skills.map(&:name).sort.join(", ") %></p><br>
+    Languages: <p><%= @user.languages.map(&:name).sort.join(", ") %></p><br>
+    Training Expertise: <p><%= @user.types.map(&:name).sort.join(", ") %></p><br>
 
 
-<!-- if current user, then can edit / add things to database -->
+  </div>
+
+  <hr>
+
+  <div class="optionsBottom">
+    <% if @user['fullname'] == current_user.fullname %>
+      <h6><%= link_to "Delete Account", current_user, method: :delete %></h6> <br>
+      <h6><%= link_to "Sign Out", "/signout" %></h6> <br>
+    <% end %>
+  </div>
+
 
 </div>

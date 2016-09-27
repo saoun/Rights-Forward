@@ -1,3 +1,32 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  display: inline-block;
+  margin: 0;
+}
+
+a {
+  color: #c11818;
+}
+
+.optionsBottom {
+  padding-top: 50px;
+}
+
+.optionsMiddle {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  line-height: 40px;
+}
+
+.formDiv {
+  margin-bottom: 35px;
+}
+
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #c11818;
+  border-bottom: 2px solid #c11818;
+}
