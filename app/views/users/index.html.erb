@@ -1,0 +1,23 @@
+
+<div>
+  <%= render "navbar" %>
+</div>
+
+<div class="container">
+  <h1>Search Trainers</h1>
+
+  <hr class="lineHeader">
+
+  <div>
+    <%= render "advancedsearch" %>
+  </div>
+
+  <hr>
+
+  <% @users.each do |user| %>
+    <a href="users/<%=user['id']%>"><%= user['fullname']%></a><br>
+    <p>Works at <%= user['affiliation'] %></p></br>
+    <hr>
+  <% end %>
+
+</div>
