@@ -1,0 +1,94 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  display: inline-block;
+  margin: 0;
+}
+
+a {
+  color: #c11818;
+}
+
+.optionsBottom {
+  padding-top: 50px;
+}
+
+.optionsMiddle {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  line-height: 40px;
+}
+
+.formDiv {
+  margin-bottom: 35px;
+}
+
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #c11818;
+  border-bottom: 2px solid #c11818;
+}
+
+[type=text].valid {
+  border-bottom: 1px solid #c11818;
+  box-shadow: 0 1px 0 0 #c11818;
+}
+
+//edit form and search form
+.checkFields {
+  display: inline-block;
+  padding-right: 20px;
+  font-weight: 400;
+}
+
+label {
+  font-size: 15px;
+}
+
+// edit form
+.field {
+  margin-top: 40px;
+}
+
+//about page
+.about {
+  margin-top: 50px;
+  line-height: 30px;
+}
+
+//hr line after titles
+.lineHeader {
+  border-top-color: red;
+}
+
+.labelTitle {
+  font-weight: 600;
+}
+
+[type="checkbox"]+label:before, [type="checkbox"]:not(.filled-in)+label:after {
+  border: 1px solid #5a5a5a;
+}
+
+.checkFieldsUL {
+  padding-bottom: 10px;
+}
+
+.row {
+  position: absolute;
+  bottom: 6%;
+}
+
+
+
+// input:focus + label {
+//   color: #c11818;
+// }
+
+// input:focus {
+//   border-bottom: 1px solid #c11818;
+//   box-shadow: 0 1px 0 0 #c11818;
+// }
+
+
