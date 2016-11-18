@@ -24,4 +24,6 @@ Users can sign up and create a profile<br>
 Users can add skills and expertise <br>
 Users or visitors can search and view the profile of other users
 
+
+## Home Screenshot
 ![upload](screenshot.png)
