@@ -2,6 +2,8 @@
 
 Rights Forward is an employment platform and search engine for trainers in the non-profit field. 
 
+You can visit the live site here: https://rightsforward.herokuapp.com/
+
 ## Code
 
 Ruby on Rails, HTML, CSS, Javascript, jQuery
