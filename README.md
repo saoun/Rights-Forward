@@ -27,6 +27,8 @@ Users can add skills and expertise <br>
 Users or visitors can search and view the profile of other users
 
 
-## Home Screenshot
+## Home Page Screenshot
 ![upload](screenshot.png)
+
+## Search Page Screenshot
 ![upload](screenshot1.png)
